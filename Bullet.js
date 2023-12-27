@@ -43,10 +43,13 @@ class Bullet{
                 this.velX=0;
                 enemyArray[i].velX=0;
 
-                //화면에서 나제거, 너제거
+                //나를 화면에서 나제거, 적군도 제거
+                wrapper.removeChild(this.div);
+                wrapper.removeChild( enemyArray[i].img);
 
-                //배열에서도 나제거 , 너제거 
-
+                //총알을 배열에서 제거 
+                bulletArray.splice(bulletArray.indexOf(this) , 1);
+                enemyArray.splice(i , 1);
            }
         }
 
